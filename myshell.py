@@ -13,7 +13,6 @@ def main():
             current_dir=os.getcwd()
             user_input = input(f"{current_dir}$> ").strip()
             
-            # 2. EVALUATE: Handle empty input or exit
             if not user_input:
                 continue
             history.append(user_input)
@@ -21,7 +20,7 @@ def main():
                 print("Exiting")
                 break
                 
-            # Execute the command (We will write this function next)
+            # Execute the command
             execute_command(user_input,history)
             
         except EOFError: # Handles Ctrl+D
@@ -60,4 +59,5 @@ def execute_command(user_input,history):
             print(f"myshell: {e}")
 
 if __name__ == "__main__":
+
     main()
